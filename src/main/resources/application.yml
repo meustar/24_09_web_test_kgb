@@ -1,3 +1,36 @@
 server:
   port: 8081
-  
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: 
+#    password: 구글 계정 앱 비밀번호
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  datasource:
+#    driver-class-name: com.mysql.jdbc.Drive
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://127.0.0.1:3306/web_test?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+    username: root
+    password: 
+mybatis:
+  type-aliases-package: com.example.demo.vo
+custom:
+  siteName: web_test
+  siteMainUri: http://localhost:8081
+  emailFrom: no-reply@localhost
+  emailFromName: web_test
+#  genFileDirPath: 
